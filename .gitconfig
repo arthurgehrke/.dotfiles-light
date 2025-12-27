@@ -1,0 +1,10 @@
+[apply]
+  whitespace = nowarn
+
+[user]
+  name = Arthur Gehrke
+  email = arthurgehrke07@gmail.com
+
+[core]
+  editor = nvim
+  excludesfile = /Users/arthurgehrke/.gitignore
