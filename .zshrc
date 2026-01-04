@@ -42,7 +42,21 @@ source "$(brew --prefix)"/share/zsh-history-substring-search/zsh-history-substri
 ##############################################################################
 # History
 ##############################################################################
-export HISTFILE=~/.zsh_history
+CURRENT_HOST=$(hostname)
+
+HIST_AIR="$HOME/.zsh_history_mac_air"
+HIST_PRO="$HOME/.zsh_history_mac_pro"
+
+if [[ "$CURRENT_HOST" == *"Air"* ]]; then
+    export HISTFILE="$HIST_AIR"   # GRAVA aqui
+    EXTRA_HIST="$HIST_PRO"        # LÊ este também
+elif [[ "$CURRENT_HOST" == *"Pro"* ]]; then
+    export HISTFILE="$HIST_PRO"   # GRAVA aqui
+    EXTRA_HIST="$HIST_AIR"        # LÊ este também
+else
+    export HISTFILE="$HOME/.zsh_history"
+fi
+
 export HISTSIZE=500000000
 export SAVEHIST=500000000
 export HISTFILESIZE=50000000
@@ -72,3 +86,7 @@ setopt COMPLETE_IN_WORD
 setopt PROMPT_SUBST
 setopt NO_HUP
 setopt NO_NOMATCH
+
+if [ -f "$EXTRA_HIST" ]; then
+    fc -R "$EXTRA_HIST"
+fi
