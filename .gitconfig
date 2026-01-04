@@ -8,3 +8,7 @@
 [core]
   editor = nvim
   excludesfile = /Users/arthurgehrke/.gitignore
+
+[push]
+  default = current
+  autoSetupRemote = true
