@@ -18,6 +18,7 @@ cask "google-drive"
 cask "guitar-pro"
 cask "notion"
 cask "postman"
+cask "wifispoof"
 mas "AdGuard Mini", id: 1440147259
 mas "Amphetamine", id: 937984704
 mas "Easy CSV Editor", id: 1171346381
